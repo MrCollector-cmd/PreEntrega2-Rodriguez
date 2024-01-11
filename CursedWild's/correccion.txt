@@ -1,0 +1,83 @@
+Buenas!
+
+Revisé tu trabajo y está muy bien!, te hago igualmente unas observaciones:
+
+
+
+WIREFRAME
+
+-El diseño de los wireframe es correcto, el diseño es sencillo e intuitivo para el usuario.
+
+
+
+HTML
+
+- Estructura html correcta. Se utilizan etiquetas semánticas, se divide en secciones diferenciadas header-main-footer
+
+- Navegación del sitio correcta. Las páginas están bien enlazadas entre sí, se puede navegar sin problemas.
+
+- h1: revisar la etiqueta h1 en el index, que está en mayúscula y por convención se suelen poner las etiquetas siempre en minúscula. Respecto al h1 también, recomiendo poner un h1 (y no más que uno) en cada página html, en lo posible indicando en título de cada página en cuestión.
+
+-enlaces del footer: como recomendación, los enlaces del footer se podrían poner dentro de una lista y dentro de un nav ya que indica una sección navegable (de forma similar al header, nav-ul-li-a)
+
+
+
+
+
+CSS
+
+- Buen uso de css. Se aplican selectores de etiqueta y de clase, se aplican propiedades de box-model así como decorativas.
+
+- Reset general: noté que usas el reset de margen, padding y box-sizing (que basicamente selecciona cada elemento, uno a uno, y aplica estas propiedades) lo cual está muy bien...
+
+
+
+*{
+
+ margin: 0;
+
+ padding: 0;
+
+ box-sizing: border-box
+
+}
+
+
+
+Sin embargo también agregaste las propiedades de font-family y color. Estas propiedades, a diferencia de las otras indicadas, no recomiendo ponerlas allí ya que son heredables. Es decir al definir las mismas en un padre, se heredan a los elementos hijos. Entonces podrías ponerlas en el body directamente y que por herencia se apliquen a los hijos.
+
+La razón por la que se suele poner margin, padding y box-sizing para 'resetear' el modelo de cajas, es porque esas no son propiedades heredables, entonces tiene sentido usar el selector universal *
+
+Igualmente, hay elementos que por cascada no reciben ciertas propiedades sino que las heredan del navegador. 2 ejemplos son el anchor y los input. En esos casos hay que definir font y color manualmente para esos elementos, porque si los definis en su padre, no heredaran esas propiedades.
+
+Hay sin embargo un tip que recomiendo para evitar esto, y sería poner:
+
+
+
+a, input{
+
+font: inherit;
+
+color: inherit
+
+}
+
+
+
+Entonces forzamos todos los a y todos los input para que hereden esas propiedades (y no tomén los defaults del navegador)
+
+
+
+- Observación: noté que usaste muchos position: absolute par acomodar cosas. Esto no lo recomiendo para armar el layout del sitio ya que es dificil de mantener y lograr un diseño consistente, además luego para responsive se te va a complicar si tratas de acomodar todo 'a mano'. 
+
+Si bien para esta primer entrega no entra flex, ya a partir de ahora sería recomendado que plantees tu estructura básica del sitio usando flex (y/o grid que veremos luego).
+
+Position absolute recomiendo usar cuando uno quiere acomodar algo en relación a otra cosa y que no haya forma sencilla de hacerlo usando herramientas de layout standard (flex/grid). Un uso común a veces se ve en modales (ventanas emergentes) que tienen una cruz para cerrarlo justo en el borde de la ventana, se logra facil con position absolute. También se suele usar para crear efectos visuales, anclando elementos a partir de uno principal.
+
+
+
+--
+
+
+
+En general tu trabajo está muy bien, el proyecto viene encaminado!. Buen trabajo!! Aprobado

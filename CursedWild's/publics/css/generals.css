@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+/* esto es un comentario y no es tomado en cuenta :)  */
+:root{
+    --color-font: rgb(165, 177, 137);
+
+    --color-8: #b7b99d;
+    --color-7: #9c9f7c;
+    --color-6: #848863;
+    --color-5: #646749;
+    --color-4: #4d503b;
+    --color-3: #404232;
+    --color-2: #383a2d;
+    --color-1: #1d1e15;
+
+
+}
+/* Correccion 1 ==============================*/
+a,input{
+    color: inherit;
+    font-family: inherit;
+}
+body{
+    font-family: 'Pixelify Sans', sans-serif;
+    color: #b7c5d2 ;
+}
+/* ====================================== */
+
+/* conteiner */
+.conteiner{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+/* /////////////// */
+/* header */
+.headerFacha{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #6467494c, #8488634e),url('../img/bg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.containerMainImg{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #6467494c, #8488634e),url('../img/bg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* ////////////// */
+/* logo */
+.headerLogo{
+    margin: .9rem 6%;
+    width:4rem;
+    grid-area: logo;
+    object-fit: contain;
+    z-index: 100;
+} 
+/* ///////////// */
+/* nav */
+.navbar{
+    background-color: var(--color-4) !important;
+}
+header nav ul{
+    display: flex; 
+    grid-area: nav;
+    list-style: none;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    margin: 0 2rem 0 0 ;
+}
+header nav ul li{
+    margin: 1rem .7rem;
+}
+header nav ul li a{
+    display: inline-block;
+    width: 100%;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: #b7c5d2 !important;
+    transition: transform .1s;
+}
+header nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-2) !important;
+    transition: width .4s;
+    border-radius: 20px;
+    z-index: 200;
+}
+header nav ul li a:hover::before{ 
+    width: 100%;
+    
+}
+header nav ul li a:link{
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    /* background: var(--color-5) ; */
+    border: none;
+    transform: scale(1.03);
+}
+/* ////////////////////////// */
+/* contenido */
+.contenido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 81vh;
+    width: 100vw;
+    z-index: 1;
+}
+#info{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 80%;
+    height: 90%;
+    padding: 1.2rem;
+    background-color: var(--color-5);
+    border-radius: 0;
+    border-radius: 20px;
+    
+}
+.contenedorTexto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+}
+.contenido h1{
+    width: 60%;
+    top: 9%;
+    left: 36%;
+    font-size: 200%;
+    font-weight: bold;
+}
+.contenido img{
+    border-radius: 10px;
+    width:13em;
+    object-fit:fill;
+    cursor: pointer;
+    transition: transform .5s;
+}
+/* .contenido img:hover{
+    transform: rotate(-10deg);
+} */
+/* ////////////////////// */
+/* footer */
+footer nav{
+    position: absolute;
+    height: 2.5rem;
+    bottom:0rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-4);
+    z-index: 1000;
+}
+footer nav ul li a{
+    padding:1.7vh;
+    text-decoration: none;
+    text-align: center;
+}
+footer nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0 2rem 0 0 ;
+}
+footer nav ul li{
+    margin: 0 .7rem;
+}
+footer nav ul li a:link{
+    text-decoration: none;
+}
+footer nav ul li a:hover{
+    background: var(--color-5) ;
+    border: none;
+} 
+/* //////////////////// */
+/* main color */
+.containerMainColor{
+    background-color: var(--color-5);
+    height: 100vh;
+    width: 100vw;
+}
+/* //////////////////////// */
+/* cartas de vista NO del juego en si */
+.contenedorCartas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.inf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-4);
+    border-radius: 20px 0 20px 0;
+    width:50rem ;
+    height: 11rem;
+    overflow-y: auto;
+}
+.carta img{ 
+    width: 44%;
+    height:100%;
+    object-fit: cover;
+}
+.derecha{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 1rem;
+}
+.izquierda{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.derecha p{
+    padding: 0 1rem;
+}
+.izquierda p{
+    padding: 0 1rem;
+}
+.tituloIdeas,.tituloJuego{
+    padding: 1rem 0;
+}
+/* ///////////////////// */
+/* cartas del juego: carrusel */
+.containerMainImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 82.3%;
+}
+.contenedorInfoCartas{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 30rem;
+    width: 45rem;
+}
+.infContenedor{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 36% 64%;
+    grid-template-areas: 
+    'carrusel descripcion'
+    ;
+    width: 56rem;
+    height: 22rem;
+    border-radius:20px;
+    background-color: var(--color-5);
+}
+.vista{
+    position: relative;
+    margin: 0 1rem;
+    padding: 1.5rem 0;
+    overflow: hidden;
+    width: 100%;
+    height: 20rem;
+}
+.contCarrusel{
+    position: absolute;
+    grid-area: carrusel;
+    display: flex;
+    left: -65%;
+    width: 100%;
+}
+.text{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 0 0 1.9rem ;
+    height: 100%;
+    width: 90%;
+    grid-area: descripcion;
+}
+.contCarrusel img{
+    position: relative;
+    border-radius: 10px;
+    padding: 0 0.2rem;
+    width: 77%;
+    height:44vh;
+    object-fit: fill;
+}
+.contenedorInfoCartas p{
+    text-align: start;
+}
+.contenedorInfoCartas h1{
+    text-align: start;
+}
+/* ////////////////////////// */
+/* contacto */
+.seccionForm{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height:75%;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg,#646749d7 30%,#848863d7 70%);
+}
+form input{
+    width: 60%;
+    padding: .5rem 1rem;
+    border: none;
+    font-size: 1rem;
+    color: #b7c5d2;
+    background: transparent;
+    border-bottom: 1px solid ;
+}
+.labelNombre{
+    font-size: 140%;
+}
+.labelMail{
+    font-size: 140%;
+}
+.fieldset{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border: 0;
+    margin: 1rem 0;
+    width: 50%;
+}
+form #textarea{
+    width: 55%;
+    padding: 1rem;
+    resize: none;
+    border: none;
+    font-size: 1rem;
+    background-color: var(--color-4);
+}
+form #enviar{
+    background-color: var(--color-5);
+    cursor: pointer;
+    bottom: 5%;
+    left: 34%;
+    width: 30%;
+    margin: 1rem auto;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+form h1{
+    color: #b7c5d2;
+    font-size: 2rem;
+}
+/* /////////////////////////////// */
+/* medias */
+@media screen and (max-width: 960px) {
+    .contenido img{
+        width: 11em;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .contenido img{
+        width: 9em;
+    }
+    .contenido h1{
+        width:100%;
+    }
+    .contenedorTexto{
+        width: 100%;
+        height: 12rem;
+        overflow-y: auto;
+    }
+  }
+  @media screen and (max-width:540px) {
+    .contenido img{
+        width: 10rem;
+    }
+    .contenido h1{
+        display: none;
+    }
+    .contenedorTexto{
+        width: 100%;
+        height: 12rem;
+        overflow-y: auto;
+    }
+    footer nav ul li a{
+        padding:1.7vh 0;
+    }
+  }
