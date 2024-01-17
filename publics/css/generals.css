@@ -415,7 +415,7 @@ form h1{
         padding:1.7vh 0;
     }
   }
-  /* --------------------------------------- aux */
+  /* --------------------------------------- auxiliar de pre-entrega 2 */
   
 a,input{
     color: inherit;
@@ -473,7 +473,7 @@ main{
     font-size: 1rem;
 }
 .img{
-    top: -15rem;
+    top: -13rem;
     left: -15%;
 }
 .img img{
@@ -513,10 +513,36 @@ footer{
     width: 100%;
 }
 footer nav{
+    width: 100%;
         background-color: transparent ;
         background-image: linear-gradient(to bottom, #646749c7, #727555cf, #7f8262c7, #8e916fd2, #9c9f7c95);
         backdrop-filter: blur(2px);
 }
+
+#mainSobreNosotros{
+    background-image: none;
+    background-color: var(--color-4);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+.secInf{
+        overflow: hidden;
+        margin: .5rem 0;
+        padding: 0;
+        height: 15rem;
+}
+section .info{
+    height: 12rem;
+    background-color: var(--color-5);
+    
+}
+section img{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
 @keyframes despliegueuno{
     from{opacity: 0;
         transform: rotate(0deg);
@@ -589,5 +615,18 @@ footer nav{
             animation-fill-mode: forwards;
             animation-duration: 2s;
             animation-name: desplieguetres;
+        }
+    }
+    @media screen and (max-width:827px) {
+        .secInf{
+            margin: 0.5rem 0;
+        }
+        .secInf .info{
+            flex-direction: column;
+            height: 15rem;
+        }
+        .info img{
+            margin: 1rem 0;
+            width: 14rem;
         }
     }
